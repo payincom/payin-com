@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="PayIn">
+  <rect width="512" height="512" rx="112" fill="#16161a"/>
+  <path d="M144 354V144h137c55 0 90 32 90 81s-35 82-90 82h-66v47h-71Zm71-112h57c20 0 32-12 32-29s-12-29-32-29h-57v58Z" fill="#faf8f3"/>
+  <rect x="358" y="346" width="48" height="48" rx="11" fill="#1f6f4e"/>
+</svg>
