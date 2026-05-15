@@ -6,7 +6,7 @@ order: 10
 
 Stablecoin payments let merchants receive blockchain-based payments denominated in assets such as USDC or USDT.
 
-PayIn focuses on merchant payment workflows rather than speculative trading. The common goal is simple: a merchant creates a payment request, the customer pays on a supported blockchain, and the merchant system receives a reliable status update.
+PayIn focuses on merchant payment workflows: a merchant creates a payment request, the customer pays on a supported blockchain, and the merchant system receives a reliable status update.
 
 ## What PayIn verifies
 
@@ -18,9 +18,9 @@ A PayIn payment system typically verifies:
 4. The transaction is confirmed enough for the configured risk policy.
 5. The merchant system receives a status update through API and webhook events.
 
-## What PayIn does not replace
+## Merchant responsibilities
 
-PayIn does not remove the merchant's responsibility for:
+Merchants remain responsible for:
 
 - Legal and compliance obligations
 - Wallet custody and treasury management

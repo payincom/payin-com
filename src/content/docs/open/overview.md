@@ -6,7 +6,7 @@ order: 40
 
 PayIn Open is the open-source, self-hosted PayIn payment gateway for online merchants.
 
-Use PayIn Open when you want to deploy and operate your own stablecoin payment system instead of using a hosted payment service.
+Use PayIn Open to deploy and operate your own self-hosted stablecoin payment system.
 
 ## What PayIn Open provides
 

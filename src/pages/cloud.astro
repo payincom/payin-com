@@ -7,7 +7,7 @@ const withBase = (path: string) => `${base}/${path.replace(/^\//, '')}`;
   <section class="hero">
     <p class="eyebrow">PayIn Cloud</p>
     <h1>Hosted stablecoin payments for online merchants.</h1>
-    <p class="lead">PayIn Cloud is the fastest path to stablecoin payment acceptance. PayIn operates the payment service layer; your team integrates orders, payment pages, webhooks, and reconciliation. The payment model is non-custodial: PayIn coordinates payment status without taking custody of merchant funds.</p>
+    <p class="lead">PayIn Cloud is the fastest path to stablecoin payment acceptance. PayIn operates the payment service layer; your team integrates orders, payment pages, webhooks, and reconciliation. The payment model is non-custodial: PayIn coordinates payment status while funds settle to merchant-controlled destinations.</p>
     <div class="actions">
       <a class="button cloud" href={withBase('/docs/cloud/getting-started/')}>Read Cloud docs</a>
       <a class="button secondary" href={withBase('/docs/cloud/production-launch/')}>Launch checklist</a>
@@ -17,7 +17,7 @@ const withBase = (path: string) => `${base}/${path.replace(/^\//, '')}`;
   <section class="section">
     <div class="section-head">
       <p class="eyebrow">Who it is for</p>
-      <h2>For merchants who want stablecoin payments without operating payment infrastructure.</h2>
+      <h2>Hosted stablecoin payment infrastructure for merchant teams.</h2>
       <p>PayIn Cloud is for ecommerce, SaaS, platforms, and B2B merchants who want API-first stablecoin payments while PayIn handles the payment service layer.</p>
     </div>
     <div class="grid four">
@@ -31,13 +31,13 @@ const withBase = (path: string) => `${base}/${path.replace(/^\//, '')}`;
   <section class="section">
     <div class="section-head">
       <p class="eyebrow">Non-custodial trust model</p>
-      <h2>Hosted service does not mean hosted funds.</h2>
-      <p>PayIn Cloud hosts the payment infrastructure: APIs, payment pages, blockchain monitoring, webhooks, and operational workflows. The architecture is designed so funds settle through merchant-controlled payment destinations rather than PayIn custody.</p>
+      <h2>Hosted service layer. Merchant-controlled funds.</h2>
+      <p>PayIn Cloud hosts the payment service layer: APIs, payment pages, blockchain monitoring, webhooks, and operational workflows. Funds settle to merchant-controlled payment destinations under the non-custodial PayIn model.</p>
     </div>
     <div class="grid">
       <article class="card cloud"><h3>Infrastructure layer</h3><p class="muted">PayIn Cloud helps create, monitor, notify, and reconcile payments.</p></article>
       <article class="card cloud"><h3>Merchant ownership</h3><p class="muted">Merchants remain responsible for wallet custody, treasury policy, and business controls.</p></article>
-      <article class="card cloud"><h3>Customer confidence</h3><p class="muted">A non-custodial payment model is easier to explain: PayIn verifies the payment flow without holding customer funds.</p></article>
+      <article class="card cloud"><h3>Customer confidence</h3><p class="muted">A non-custodial payment model is clear to explain: PayIn verifies the payment flow while merchants keep custody control.</p></article>
     </div>
   </section>
 
@@ -50,7 +50,7 @@ const withBase = (path: string) => `${base}/${path.replace(/^\//, '')}`;
     <div class="grid">
       <article class="card cloud"><h3>1. Start in sandbox</h3><p class="muted">Create test orders, open payment pages, test webhooks, and verify business-system updates.</p></article>
       <article class="card cloud"><h3>2. Integrate payments</h3><p class="muted">Use API keys server-side, create order payments, process webhooks idempotently, and prepare reconciliation.</p></article>
-      <article class="card cloud"><h3>3. Launch production</h3><p class="muted">Separate production secrets, verify support workflows, monitor failures, and move to mainnet only when ready.</p></article>
+      <article class="card cloud"><h3>3. Launch production</h3><p class="muted">Separate production secrets, verify support workflows, monitor payment operations, and move to mainnet when ready.</p></article>
     </div>
   </section>
 

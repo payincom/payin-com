@@ -31,4 +31,4 @@ PayIn Cloud and PayIn Open are not “free vs paid tiers” of the same deployme
 
 - In **PayIn Cloud**, PayIn hosts and operates the payment service.
 - In **PayIn Open**, the merchant self-hosts and operates the open-source payment gateway.
-- In **PayIn Go**, the product is optimized for in-person payment acceptance rather than online checkout integration.
+- In **PayIn Go**, the product is optimized for in-person payment acceptance and face-to-face merchant workflows.

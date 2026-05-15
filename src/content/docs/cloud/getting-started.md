@@ -4,7 +4,7 @@ description: Start integrating with the hosted PayIn Cloud payment service.
 order: 30
 ---
 
-PayIn Cloud is the hosted PayIn service for online merchants who want stablecoin payments without running their own payment infrastructure.
+PayIn Cloud is the hosted PayIn service for online merchants adopting stablecoin payments through PayIn-operated service infrastructure.
 
 Use PayIn Cloud when you want PayIn to operate the payment service while your business integrates APIs, hosted payment pages, and webhooks.
 
