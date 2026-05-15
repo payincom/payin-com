@@ -1,0 +1,20 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const docs = (await getCollection('docs')).sort((a, b) => a.data.order - b.data.order);
+---
+<BaseLayout title="Docs" description="PayIn documentation hub for Cloud, Open, and Go products.">
+  <section class="hero">
+    <p class="eyebrow">Docs</p>
+    <h1>PayIn documentation hub.</h1>
+    <p class="lead">Central entry point for PayIn Cloud, PayIn Open, PayIn Go, integration guides, and operational runbooks.</p>
+  </section>
+  <div class="grid">
+    {docs.map((doc) => (
+      <article class="card">
+        <h3><a href={`/docs/${doc.slug}/`}>{doc.data.title}</a></h3>
+        <p class="muted">{doc.data.description}</p>
+      </article>
+    ))}
+  </div>
+</BaseLayout>
