@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+const withBase = (path: string) => `${base}${path.replace(/^\//, '')}`;
 ---
 <BaseLayout title="Stablecoin payments for every merchant" description="PayIn builds stablecoin payment products for hosted online payments, self-hosted gateways, and in-person merchants.">
   <section class="hero">
@@ -7,8 +9,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <h1>Stablecoin payments for online, self-hosted, and in-person merchants.</h1>
     <p class="lead">PayIn is the public home for PayIn Cloud, PayIn Open, PayIn Go, and the shared concepts behind stablecoin merchant payments.</p>
     <div class="actions">
-      <a class="button" href="/docs/">Explore docs</a>
-      <a class="button secondary" href="/docs/product-lines/">Compare products</a>
+      <a class="button" href={withBase('/docs/')}>Explore docs</a>
+      <a class="button secondary" href={withBase('/docs/product-lines/')}>Compare products</a>
     </div>
   </section>
 
@@ -17,17 +19,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="grid">
       <article class="card">
         <p class="eyebrow small">Hosted</p>
-        <h3><a href="/docs/cloud/getting-started/">PayIn Cloud</a></h3>
+        <h3><a href={withBase('/docs/cloud/getting-started/')}>PayIn Cloud</a></h3>
         <p class="muted">Hosted stablecoin payment cloud service for online businesses. PayIn operates the infrastructure; merchants integrate APIs, payment pages, and webhooks.</p>
       </article>
       <article class="card">
         <p class="eyebrow small">Self-hosted</p>
-        <h3><a href="/docs/open/overview/">PayIn Open</a></h3>
+        <h3><a href={withBase('/docs/open/overview/')}>PayIn Open</a></h3>
         <p class="muted">Open-source payment gateway for merchants who want to deploy and operate their own stablecoin payment infrastructure.</p>
       </article>
       <article class="card">
         <p class="eyebrow small">In-person</p>
-        <h3><a href="/docs/go/overview/">PayIn Go</a></h3>
+        <h3><a href={withBase('/docs/go/overview/')}>PayIn Go</a></h3>
         <p class="muted">Face-to-face payment product for in-person merchants and point-of-sale style payment flows.</p>
       </article>
     </div>
@@ -36,9 +38,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section>
     <h2>Shared payment concepts</h2>
     <div class="grid">
-      <article class="card"><h3><a href="/docs/concepts/order-payments/">Order payments</a></h3><p class="muted">Checkout, invoice, and payment request flows.</p></article>
-      <article class="card"><h3><a href="/docs/concepts/deposits/">Deposits</a></h3><p class="muted">Assigned addresses, account top-ups, and monitored incoming transfers.</p></article>
-      <article class="card"><h3><a href="/docs/concepts/webhooks/">Webhooks</a></h3><p class="muted">Reliable merchant system updates for payment status changes.</p></article>
+      <article class="card"><h3><a href={withBase('/docs/concepts/order-payments/')}>Order payments</a></h3><p class="muted">Checkout, invoice, and payment request flows.</p></article>
+      <article class="card"><h3><a href={withBase('/docs/concepts/deposits/')}>Deposits</a></h3><p class="muted">Assigned addresses, account top-ups, and monitored incoming transfers.</p></article>
+      <article class="card"><h3><a href={withBase('/docs/concepts/webhooks/')}>Webhooks</a></h3><p class="muted">Reliable merchant system updates for payment status changes.</p></article>
     </div>
   </section>
 </BaseLayout>

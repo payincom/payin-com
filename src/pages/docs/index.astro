@@ -2,6 +2,8 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 const docs = (await getCollection('docs')).sort((a, b) => a.data.order - b.data.order);
+const base = import.meta.env.BASE_URL;
+const withBase = (path: string) => `${base}${path.replace(/^\//, '')}`;
 const groups = [
   { title: 'Start here', prefix: '', docs: docs.filter((doc) => !doc.slug.includes('/')) },
   { title: 'Concepts', prefix: 'concepts', docs: docs.filter((doc) => doc.slug.startsWith('concepts/')) },
@@ -23,7 +25,7 @@ const groups = [
       <div class="grid">
         {group.docs.map((doc) => (
           <article class="card">
-            <h3><a href={`/docs/${doc.slug}/`}>{doc.data.title}</a></h3>
+            <h3><a href={withBase(`/docs/${doc.slug}/`)}>{doc.data.title}</a></h3>
             <p class="muted">{doc.data.description}</p>
           </article>
         ))}

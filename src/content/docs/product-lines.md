@@ -8,9 +8,9 @@ PayIn is a product family for stablecoin payments across online, self-hosted, an
 
 | Product | Best for | Operating model | Primary docs |
 | --- | --- | --- | --- |
-| **PayIn Cloud** | Online merchants who want a hosted payment service | PayIn operates the payment infrastructure | [Cloud docs](/docs/cloud/getting-started/) |
-| **PayIn Open** | Merchants who want to self-host their own payment gateway | Merchant deploys and operates PayIn Open | [Open docs](/docs/open/overview/) |
-| **PayIn Go** | In-person and face-to-face merchants | Lightweight point-of-sale payment flows | [Go docs](/docs/go/overview/) |
+| **PayIn Cloud** | Online merchants who want a hosted payment service | PayIn operates the payment infrastructure | [Cloud docs](./cloud/getting-started/) |
+| **PayIn Open** | Merchants who want to self-host their own payment gateway | Merchant deploys and operates PayIn Open | [Open docs](./open/overview/) |
+| **PayIn Go** | In-person and face-to-face merchants | Lightweight point-of-sale payment flows | [Go docs](./go/overview/) |
 
 ## Shared concepts
 
