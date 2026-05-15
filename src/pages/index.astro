@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const base = import.meta.env.BASE_URL;
-const withBase = (path: string) => `${base}${path.replace(/^\//, '')}`;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const withBase = (path: string) => `${base}/${path.replace(/^\//, '')}`;
 ---
 <BaseLayout title="Stablecoin payments for every merchant" description="PayIn builds stablecoin payment products for hosted online payments, self-hosted gateways, and in-person merchants.">
   <section class="hero">

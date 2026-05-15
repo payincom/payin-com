@@ -4,8 +4,8 @@ interface Props {
   description?: string;
 }
 const { title, description = 'PayIn stablecoin payment products for online, self-hosted, and in-person merchants.' } = Astro.props;
-const base = import.meta.env.BASE_URL;
-const withBase = (path: string) => `${base}${path.replace(/^\//, '')}`;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const withBase = (path: string) => `${base}/${path.replace(/^\//, '')}`;
 const nav = [
   { href: withBase('/'), label: 'Home' },
   { href: withBase('/docs/'), label: 'Docs' },
