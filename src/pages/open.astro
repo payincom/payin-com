@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const withBase = (path: string) => `${base}/${path.replace(/^\//, '')}`;
+---
+<BaseLayout title="PayIn Open" description="A complete open-source stablecoin payment stack merchants can self-host and operate independently.">
+  <section class="hero">
+    <p class="eyebrow">PayIn Open</p>
+    <h1>A complete open-source stablecoin payment stack.</h1>
+    <p class="lead">PayIn Open is the self-hosted, non-custodial path for merchants and developers who want control, transparency, and portability across stablecoin orders, deposits, webhooks, and operations.</p>
+    <div class="actions">
+      <a class="button open" href="https://github.com/payincom/payin-open">View on GitHub ↗</a>
+      <a class="button secondary" href={withBase('/docs/open/ai-agent-deployment/')}>AI-assisted deployment</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <p class="eyebrow">Why open</p>
+      <h2>Stablecoin payment infrastructure should not have to be a black box.</h2>
+      <p>Merchants handling payment operations may need source visibility, self-hosting control, custom integration paths, and the ability to audit how orders, deposits, monitoring, and webhooks work.</p>
+    </div>
+    <div class="grid four">
+      <article class="card"><h3>Self-host</h3><p class="muted">Deploy your own non-custodial payment gateway and operate it in your own environment.</p></article>
+      <article class="card"><h3>Inspect</h3><p class="muted">Understand how payment flows, monitoring, configuration, and webhooks work.</p></article>
+      <article class="card"><h3>Customize</h3><p class="muted">Adapt PayIn Open to your merchant stack and operational requirements.</p></article>
+      <article class="card"><h3>Control</h3><p class="muted">Own your deployment, database, secrets, RPC providers, and production posture.</p></article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <p class="eyebrow">What is included</p>
+      <h2>Merchant-ready payment operations, not just wallet addresses.</h2>
+    </div>
+    <div class="grid">
+      <article class="card open"><h3>Order payments</h3><p class="muted">Create checkout, invoice, and payment-link flows with payment status tracking.</p></article>
+      <article class="card open"><h3>Deposit flows</h3><p class="muted">Support assigned addresses and account funding workflows across supported networks.</p></article>
+      <article class="card open"><h3>Webhooks and reconciliation</h3><p class="muted">Connect chain events to merchant systems with operationally safe status updates.</p></article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <p class="eyebrow">Non-custodial and self-hosted</p>
+      <h2>Control the infrastructure without handing PayIn custody of funds.</h2>
+      <p>PayIn Open gives merchants a transparent stack for payment orchestration, monitoring, webhooks, and reconciliation. Funds are designed to settle to merchant-controlled destinations, while PayIn Open provides the software layer that makes those payments operational.</p>
+    </div>
+    <div class="grid">
+      <article class="card open"><h3>Self-custody compatible</h3><p class="muted">Merchants keep control over wallet custody and treasury operations.</p></article>
+      <article class="card open"><h3>Auditable by design</h3><p class="muted">Open-source infrastructure lets teams inspect how payment status and events are handled.</p></article>
+      <article class="card open"><h3>Operational layer</h3><p class="muted">PayIn Open turns chain payments into orders, deposits, webhooks, and reconciliation workflows.</p></article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="quote-band">
+      <p class="eyebrow">AI-agent-ready</p>
+      <h2>Designed for developers and the AI agents helping them.</h2>
+      <p>PayIn Open includes structured repository instructions and a deployment skill so an AI agent can help a merchant deploy sandbox, configure databases and RPC providers, test order payments, verify webhooks, and prepare production safely.</p>
+      <div class="actions">
+        <a class="button" href={withBase('/docs/open/ai-agent-deployment/')}>Read deployment guide</a>
+        <a class="button secondary" href="https://github.com/payincom/payin-open/tree/main/skills/payin-open">Open skill on GitHub ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <p class="eyebrow">Cloud or Open</p>
+      <h2>Same payment model, different operating responsibility.</h2>
+      <p>Use PayIn Cloud when you want PayIn to operate the service. Use PayIn Open when you want to self-host, inspect, and control the infrastructure.</p>
+    </div>
+    <div class="comparison">
+      <article class="card cloud"><h3>PayIn Cloud</h3><p class="muted">Hosted. Fast onboarding. Merchant integration through APIs, hosted pages, webhooks, and production support.</p><div class="actions"><a class="button cloud" href={withBase('/cloud/')}>Explore Cloud</a></div></article>
+      <article class="card open"><h3>PayIn Open</h3><p class="muted">Self-hosted. Open-source. Merchant-controlled infrastructure with repo-local docs and agent-friendly deployment instructions.</p><div class="actions"><a class="button open" href="https://github.com/payincom/payin-open">View GitHub ↗</a></div></article>
+    </div>
+  </section>
+</BaseLayout>

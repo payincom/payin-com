@@ -2,45 +2,193 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const withBase = (path: string) => `${base}/${path.replace(/^\//, '')}`;
+const stablecoins = ['USDC', 'USDT', 'PYUSD', 'DAI'];
+const networks = ['Ethereum', 'Polygon', 'Solana', 'Base', 'Arbitrum', 'BNB Chain', 'Tron', 'Optimism'];
 ---
-<BaseLayout title="Stablecoin payments for every merchant" description="PayIn builds stablecoin payment products for hosted online payments, self-hosted gateways, and in-person merchants.">
-  <section class="hero">
-    <p class="eyebrow">Stablecoin payment infrastructure</p>
-    <h1>Stablecoin payments for online, self-hosted, and in-person merchants.</h1>
-    <p class="lead">PayIn is the public home for PayIn Cloud, PayIn Open, PayIn Go, and the shared concepts behind stablecoin merchant payments.</p>
-    <div class="actions">
-      <a class="button" href={withBase('/docs/')}>Explore docs</a>
-      <a class="button secondary" href={withBase('/docs/product-lines/')}>Compare products</a>
+<BaseLayout title="Stablecoin payment infrastructure for real merchants" description="PayIn turns multi-chain stablecoin payments into merchant-ready order, deposit, webhook, and reconciliation workflows.">
+  <section class="hero wide hero-panel">
+    <div>
+      <p class="eyebrow">Stablecoin payment infrastructure</p>
+      <h1>Stablecoin payments for real merchants.</h1>
+      <p class="lead">PayIn turns multi-chain stablecoins into non-custodial merchant payment flows: order payments, deposit addresses, payment pages, webhooks, and reconciliation. Funds move on-chain between payer and merchant-controlled destinations — not through PayIn custody.</p>
+      <div class="actions">
+        <a class="button cloud" href={withBase('/cloud/')}>Explore PayIn Cloud</a>
+        <a class="button open" href={withBase('/open/')}>View PayIn Open</a>
+        <a class="button secondary" href={withBase('/docs/')}>Read docs</a>
+      </div>
+    </div>
+    <aside class="signal-card" aria-label="PayIn payment flow summary">
+      <p class="mini-label">One layer for stablecoin operations</p>
+      <div class="flow-row">
+        <div class="flow-box"><strong>Stablecoins</strong><p class="muted">USDC, USDT and more</p></div>
+        <span class="arrow">→</span>
+        <div class="flow-box"><strong>Networks</strong><p class="muted">Ethereum, Solana, Base...</p></div>
+      </div>
+      <div class="flow-row">
+        <div class="flow-box"><strong>PayIn</strong><p class="muted">Order + Deposit modes</p></div>
+        <span class="arrow">→</span>
+        <div class="flow-box"><strong>Merchant systems</strong><p class="muted">Webhooks + reconciliation</p></div>
+      </div>
+      <div class="pill-row">
+        <span class="pill dark"><span class="coin">O</span>Order Mode</span>
+        <span class="pill dark"><span class="coin green">D</span>Deposit Mode</span>
+      </div>
+    </aside>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <p class="eyebrow">Why stablecoins</p>
+      <h2>Stablecoins are becoming a settlement layer for global commerce.</h2>
+      <p>They are fast, global, programmable, and available 24/7. But merchants need more than a wallet address — they need payment infrastructure that fits real business operations.</p>
+    </div>
+    <div class="grid four">
+      <article class="card"><h3>Global reach</h3><p class="muted">Accept payments from customers and partners across borders without rebuilding around every local rail.</p></article>
+      <article class="card"><h3>24/7 settlement</h3><p class="muted">Stablecoin networks do not wait for banking hours, weekends, or regional payment cutoffs.</p></article>
+      <article class="card"><h3>Programmable flows</h3><p class="muted">Create, monitor, notify, and reconcile payments through APIs and webhooks.</p></article>
+      <article class="card"><h3>USD-denominated value</h3><p class="muted">Stablecoin pricing is easier for merchants than volatile crypto checkout experiences.</p></article>
     </div>
   </section>
 
-  <section>
-    <h2>Choose the right PayIn product</h2>
+  <section class="section">
+    <div class="section-head">
+      <p class="eyebrow">Multi-chain reality</p>
+      <h2>Stablecoins are multi-chain. Merchant payments should be too.</h2>
+      <p>Your customers may use USDC on Base, USDT on Tron, or stablecoins on Ethereum, Polygon, Solana, and more. PayIn gives merchants one payment layer instead of one-off chain integrations.</p>
+    </div>
+    <div class="card large">
+      <p class="mini-label">Stablecoins</p>
+      <div class="pill-row">
+        {stablecoins.map((coin, index) => <span class="pill"><span class={`coin ${index === 1 ? 'green' : index === 2 ? 'orange' : index === 3 ? 'dark' : ''}`}>{coin.slice(0, 1)}</span>{coin}</span>)}
+      </div>
+      <p class="mini-label" style="margin-top: 1.5rem;">Networks</p>
+      <div class="pill-row">
+        {networks.map((network) => <span class="pill"><span class="coin dark">{network.slice(0, 1)}</span>{network}</span>)}
+      </div>
+      <p class="muted" style="margin-top: 1.25rem;">Public pages should show supported and planned networks honestly. The message is not “we list many logos”; it is “PayIn unifies multi-chain stablecoin payments into merchant operations.”</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="quote-band">
+      <p class="eyebrow">The merchant gap</p>
+      <h2>Raw blockchain transactions are not enough for merchants.</h2>
+      <p>A merchant does not just need an address. A merchant needs orders, payment pages, deposit tracking, webhook delivery, reconciliation, support workflows, and production controls. PayIn turns stablecoin transactions into payment operations.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <p class="eyebrow">Non-custodial by design</p>
+      <h2>PayIn coordinates payments. It does not custody merchant funds.</h2>
+      <p>PayIn is built as payment infrastructure, not a wallet or exchange. It helps merchants create payment requests, monitor supported blockchains, send webhooks, and reconcile records while funds settle to merchant-controlled addresses or merchant-defined destinations.</p>
+    </div>
     <div class="grid">
-      <article class="card">
+      <article class="card"><h3>Merchant-controlled funds</h3><p class="muted">Payment flows are designed so customer funds do not need to pass through PayIn custody.</p></article>
+      <article class="card"><h3>Operational visibility</h3><p class="muted">PayIn tracks payment state, confirmation, webhook delivery, and reconciliation without becoming the custodian.</p></article>
+      <article class="card"><h3>Trust through architecture</h3><p class="muted">Non-custodial design reduces platform custody risk and fits merchants who care about control, auditability, and resilience.</p></article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <p class="eyebrow">Dual-mode payments</p>
+      <h2>Order Mode + Deposit Mode in one system.</h2>
+      <p>Most crypto payment tools stop at checkout. PayIn is built around the two ways merchants actually receive money: orders and deposits.</p>
+    </div>
+    <div class="grid two">
+      <article class="card large cloud mode-card">
+        <div>
+          <p class="eyebrow small">Order Mode</p>
+          <h3>Checkout, invoices, and payment links.</h3>
+          <p class="muted">A customer pays a specific order. PayIn creates the payment request, shows instructions, monitors the transaction, and notifies your system.</p>
+        </div>
+        <div class="steps">
+          <span class="step">Create order</span>
+          <span class="step">Show payment page</span>
+          <span class="step">Detect payment</span>
+          <span class="step">Send webhook</span>
+          <span class="step">Fulfill order</span>
+        </div>
+      </article>
+      <article class="card large open mode-card">
+        <div>
+          <p class="eyebrow small">Deposit Mode</p>
+          <h3>Account funding and assigned addresses.</h3>
+          <p class="muted">A user or account receives funds through an assigned address. PayIn monitors deposits, confirms transactions, and helps your system credit balances.</p>
+        </div>
+        <div class="steps">
+          <span class="step">Assign address</span>
+          <span class="step">Monitor deposits</span>
+          <span class="step">Confirm transaction</span>
+          <span class="step">Notify system</span>
+          <span class="step">Credit account</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <p class="eyebrow">Cloud and Open</p>
+      <h2>Choose your operating model.</h2>
+      <p>PayIn Cloud and PayIn Open share the same merchant-first payment philosophy. The difference is who operates the infrastructure.</p>
+    </div>
+    <div class="comparison">
+      <article class="card large cloud">
         <p class="eyebrow small">Hosted</p>
-        <h3><a href={withBase('/docs/cloud/getting-started/')}>PayIn Cloud</a></h3>
-        <p class="muted">Hosted stablecoin payment cloud service for online businesses. PayIn operates the infrastructure; merchants integrate APIs, payment pages, and webhooks.</p>
+        <h3>PayIn Cloud</h3>
+        <p class="muted">Hosted stablecoin payments for online merchants. PayIn operates the payment infrastructure; your team integrates API keys, hosted payment pages, webhooks, and reconciliation.</p>
+        <div class="steps">
+          <span class="step">Fastest path to launch</span>
+          <span class="step">Sandbox to production onboarding</span>
+          <span class="step">Payment pages, webhooks, and merchant operations</span>
+        </div>
+        <div class="actions"><a class="button cloud" href={withBase('/cloud/')}>Explore Cloud</a></div>
       </article>
-      <article class="card">
-        <p class="eyebrow small">Self-hosted</p>
-        <h3><a href={withBase('/docs/open/overview/')}>PayIn Open</a></h3>
-        <p class="muted">Open-source payment gateway for merchants who want to deploy and operate their own stablecoin payment infrastructure.</p>
+      <article class="card large open">
+        <p class="eyebrow small">Open-source</p>
+        <h3>PayIn Open</h3>
+        <p class="muted">A complete open-source stablecoin payment stack merchants can self-host. Keep control of infrastructure while using PayIn’s order, deposit, webhook, and operations model.</p>
+        <div class="steps">
+          <span class="step">Self-hosted payment gateway</span>
+          <span class="step">Transparent and auditable infrastructure</span>
+          <span class="step">AI-agent-friendly deployment skill</span>
+        </div>
+        <div class="actions"><a class="button open" href={withBase('/open/')}>Explore Open</a></div>
       </article>
-      <article class="card">
-        <p class="eyebrow small">In-person</p>
-        <h3><a href={withBase('/docs/go/overview/')}>PayIn Go</a></h3>
-        <p class="muted">Face-to-face payment product for in-person merchants and point-of-sale style payment flows.</p>
-      </article>
+    </div>
+    <article class="card go" style="margin-top:1rem;">
+      <p class="eyebrow small">In-person</p>
+      <h3>PayIn Go lives at go.payin.com.</h3>
+      <p class="muted">PayIn Go is the face-to-face product for in-person merchants. The marketing site introduces it, but the app remains owned and deployed by the PayIn Go repository.</p>
+      <div class="actions"><a class="button secondary" href="https://go.payin.com/">Open PayIn Go ↗</a></div>
+    </article>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <p class="eyebrow">Open infrastructure</p>
+      <h2>Not a black box.</h2>
+      <p>PayIn Open gives merchants and developers a transparent, self-hostable payment gateway for stablecoin orders, deposits, webhooks, monitoring, and operations. PayIn Cloud is available when merchants want PayIn to operate the infrastructure for them.</p>
+    </div>
+    <div class="grid three">
+      <article class="card"><h3>Source you can inspect</h3><p class="muted">A practical open-source stack for teams that need transparency, portability, and control.</p></article>
+      <article class="card"><h3>Agent-ready deployment</h3><p class="muted">PayIn Open includes structured skill instructions so an AI agent can help deploy sandbox, configure providers, and test webhooks safely.</p></article>
+      <article class="card"><h3>Cloud when you want speed</h3><p class="muted">Use PayIn Cloud when you want the same stablecoin payment model without operating production infrastructure yourself.</p></article>
     </div>
   </section>
 
-  <section>
-    <h2>Shared payment concepts</h2>
-    <div class="grid">
-      <article class="card"><h3><a href={withBase('/docs/concepts/order-payments/')}>Order payments</a></h3><p class="muted">Checkout, invoice, and payment request flows.</p></article>
-      <article class="card"><h3><a href={withBase('/docs/concepts/deposits/')}>Deposits</a></h3><p class="muted">Assigned addresses, account top-ups, and monitored incoming transfers.</p></article>
-      <article class="card"><h3><a href={withBase('/docs/concepts/webhooks/')}>Webhooks</a></h3><p class="muted">Reliable merchant system updates for payment status changes.</p></article>
+  <section class="section">
+    <div class="quote-band">
+      <p class="eyebrow">Start here</p>
+      <h2>Stablecoin payments your team can actually operate.</h2>
+      <p>Start with PayIn Cloud if you want hosted infrastructure. Start with PayIn Open if you want self-hosted control. Use PayIn Go when accepting payments face to face.</p>
+      <div class="actions">
+        <a class="button" href={withBase('/cloud/')}>Start with Cloud</a>
+        <a class="button secondary" href={withBase('/open/')}>Deploy Open</a>
+        <a class="button secondary" href={withBase('/docs/')}>Read docs</a>
+      </div>
     </div>
   </section>
 </BaseLayout>

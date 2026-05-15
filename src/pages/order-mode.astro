@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const withBase = (path: string) => `${base}/${path.replace(/^\//, '')}`;
+---
+<BaseLayout title="Order Mode" description="Order Mode for stablecoin checkout, invoices, and payment links.">
+  <section class="hero">
+    <p class="eyebrow">Order Mode</p>
+    <h1>Stablecoin checkout for orders and invoices.</h1>
+    <p class="lead">Order Mode is for a specific payment request: a checkout, invoice, payment link, or one-time bill. PayIn creates the payment flow, monitors the transaction, and notifies the merchant system.</p>
+    <div class="actions"><a class="button cloud" href={withBase('/cloud/')}>Use with Cloud</a><a class="button open" href={withBase('/open/')}>Self-host with Open</a></div>
+  </section>
+  <section class="section">
+    <div class="grid">
+      <article class="card cloud"><h3>1. Create order</h3><p class="muted">Your backend creates a PayIn payment order tied to your internal order or invoice.</p></article>
+      <article class="card cloud"><h3>2. Show instructions</h3><p class="muted">The customer sees the amount, token, network, receiving address, and expiration time.</p></article>
+      <article class="card cloud"><h3>3. Confirm and fulfill</h3><p class="muted">PayIn detects payment, sends webhooks, and your system fulfills when safe.</p></article>
+    </div>
+  </section>
+</BaseLayout>

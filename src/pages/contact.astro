@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const withBase = (path: string) => `${base}/${path.replace(/^\//, '')}`;
+---
+<BaseLayout title="Contact PayIn" description="Contact PayIn about Cloud, Open, stablecoin payments, and merchant integrations.">
+  <section class="hero">
+    <p class="eyebrow">Contact</p>
+    <h1>Talk to PayIn about stablecoin payments.</h1>
+    <p class="lead">Use PayIn Cloud when you want hosted infrastructure. Use PayIn Open when you want self-hosted control. Start with docs while the commercial contact flow is being prepared.</p>
+    <div class="actions"><a class="button cloud" href={withBase('/docs/cloud/getting-started/')}>Cloud docs</a><a class="button open" href="https://github.com/payincom/payin-open">Open GitHub ↗</a></div>
+  </section>
+</BaseLayout>

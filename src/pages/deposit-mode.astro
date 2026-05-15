@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const withBase = (path: string) => `${base}/${path.replace(/^\//, '')}`;
+---
+<BaseLayout title="Deposit Mode" description="Deposit Mode for account funding, assigned addresses, and long-lived stablecoin receiving flows.">
+  <section class="hero">
+    <p class="eyebrow">Deposit Mode</p>
+    <h1>Stablecoin deposits for accounts and assigned addresses.</h1>
+    <p class="lead">Deposit Mode is for account funding, platform balances, long-lived receiving addresses, and merchant workflows where funds arrive outside a single checkout page.</p>
+    <div class="actions"><a class="button cloud" href={withBase('/cloud/')}>Use with Cloud</a><a class="button open" href={withBase('/open/')}>Self-host with Open</a></div>
+  </section>
+  <section class="section">
+    <div class="grid">
+      <article class="card open"><h3>1. Assign address</h3><p class="muted">Assign a receiving address to a user, account, merchant, or business entity.</p></article>
+      <article class="card open"><h3>2. Monitor deposits</h3><p class="muted">PayIn watches supported networks and tokens for incoming transfers.</p></article>
+      <article class="card open"><h3>3. Credit and reconcile</h3><p class="muted">Confirmed deposits trigger notifications and support ledger or balance updates.</p></article>
+    </div>
+  </section>
+</BaseLayout>
