@@ -2,19 +2,32 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 const docs = (await getCollection('docs')).sort((a, b) => a.data.order - b.data.order);
+const groups = [
+  { title: 'Start here', prefix: '', docs: docs.filter((doc) => !doc.slug.includes('/')) },
+  { title: 'Concepts', prefix: 'concepts', docs: docs.filter((doc) => doc.slug.startsWith('concepts/')) },
+  { title: 'PayIn Cloud', prefix: 'cloud', docs: docs.filter((doc) => doc.slug.startsWith('cloud/')) },
+  { title: 'PayIn Open', prefix: 'open', docs: docs.filter((doc) => doc.slug.startsWith('open/')) },
+  { title: 'PayIn Go', prefix: 'go', docs: docs.filter((doc) => doc.slug.startsWith('go/')) },
+].filter((group) => group.docs.length > 0);
 ---
-<BaseLayout title="Docs" description="PayIn documentation hub for Cloud, Open, and Go products.">
-  <section class="hero">
+<BaseLayout title="Docs" description="PayIn documentation hub for Cloud, Open, Go, and shared stablecoin payment concepts.">
+  <section class="hero compact">
     <p class="eyebrow">Docs</p>
     <h1>PayIn documentation hub.</h1>
-    <p class="lead">Central entry point for PayIn Cloud, PayIn Open, PayIn Go, integration guides, and operational runbooks.</p>
+    <p class="lead">Public concepts, product docs, and integration guidance for PayIn Cloud, PayIn Open, and PayIn Go.</p>
   </section>
-  <div class="grid">
-    {docs.map((doc) => (
-      <article class="card">
-        <h3><a href={`/docs/${doc.slug}/`}>{doc.data.title}</a></h3>
-        <p class="muted">{doc.data.description}</p>
-      </article>
-    ))}
-  </div>
+
+  {groups.map((group) => (
+    <section class="doc-section">
+      <h2>{group.title}</h2>
+      <div class="grid">
+        {group.docs.map((doc) => (
+          <article class="card">
+            <h3><a href={`/docs/${doc.slug}/`}>{doc.data.title}</a></h3>
+            <p class="muted">{doc.data.description}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  ))}
 </BaseLayout>

@@ -6,8 +6,8 @@ interface Props {
 const { title, description = 'PayIn stablecoin payment products for online, self-hosted, and in-person merchants.' } = Astro.props;
 const nav = [
   { href: '/', label: 'Home' },
-  { href: '/blog/', label: 'Blog' },
   { href: '/docs/', label: 'Docs' },
+  { href: '/blog/', label: 'Blog' },
 ];
 ---
 <!doctype html>
@@ -42,6 +42,7 @@ const nav = [
     --text: #111827;
     --muted: #667085;
     --brand: #155eef;
+    --brand-soft: #e8f0ff;
     --border: #e5e7eb;
   }
   * { box-sizing: border-box; }
@@ -67,11 +68,14 @@ const nav = [
   nav { display: flex; gap: 1rem; }
   main { max-width: 1120px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
   footer { border-top: 1px solid var(--border); color: var(--muted); padding: 2rem 1.25rem; text-align: center; }
-  .hero { padding: 5rem 0 3rem; max-width: 840px; }
+  .hero { padding: 5rem 0 3rem; max-width: 880px; }
+  .hero.compact { padding-top: 3rem; }
   .eyebrow { color: var(--brand); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
-  h1 { font-size: clamp(2.5rem, 6vw, 5rem); line-height: 1; margin: .5rem 0 1.25rem; }
-  h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); line-height: 1.15; margin-top: 3rem; }
-  .lead { font-size: 1.25rem; color: var(--muted); max-width: 760px; }
+  .eyebrow.small { font-size: .78rem; margin: 0 0 .5rem; }
+  h1 { font-size: clamp(2.5rem, 6vw, 5rem); line-height: 1; margin: .5rem 0 1.25rem; letter-spacing: -.04em; }
+  h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); line-height: 1.15; margin-top: 3rem; letter-spacing: -.03em; }
+  h3 { font-size: 1.25rem; }
+  .lead { font-size: 1.25rem; color: var(--muted); max-width: 780px; }
   .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
   .card { background: var(--panel); border: 1px solid var(--border); border-radius: 1rem; padding: 1.5rem; box-shadow: 0 10px 30px rgb(15 23 42 / 6%); }
   .card h3 { margin-top: 0; }
@@ -79,6 +83,18 @@ const nav = [
   .actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2rem; }
   .button { display: inline-flex; align-items: center; border-radius: 999px; padding: .8rem 1.1rem; font-weight: 700; background: var(--brand); color: white; }
   .button.secondary { background: white; color: var(--text); border: 1px solid var(--border); }
+  .doc-section { margin-top: 2.5rem; }
+  article.card > h1 { font-size: clamp(2rem, 4vw, 3.5rem); }
+  article.card p, article.card li { color: #374151; }
+  article.card table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+  article.card th, article.card td { border: 1px solid var(--border); padding: .75rem; text-align: left; vertical-align: top; }
+  article.card th { background: var(--brand-soft); }
+  article.card code { background: #f3f4f6; border-radius: .35rem; padding: .1rem .3rem; }
+  article.card pre { background: #111827; color: #f9fafb; overflow-x: auto; padding: 1rem; border-radius: .75rem; }
+  article.card pre code { background: transparent; color: inherit; padding: 0; }
+  @media (max-width: 900px) {
+    .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
   @media (max-width: 760px) {
     .site-header { align-items: flex-start; flex-direction: column; }
     .grid { grid-template-columns: 1fr; }

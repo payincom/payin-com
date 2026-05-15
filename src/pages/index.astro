@@ -4,29 +4,41 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <BaseLayout title="Stablecoin payments for every merchant" description="PayIn builds stablecoin payment products for hosted online payments, self-hosted gateways, and in-person merchants.">
   <section class="hero">
     <p class="eyebrow">Stablecoin payment infrastructure</p>
-    <h1>PayIn products for online, self-hosted, and in-person merchants.</h1>
-    <p class="lead">PayIn helps merchants accept stablecoin payments through hosted cloud services, open-source self-hosting, and face-to-face payment products.</p>
+    <h1>Stablecoin payments for online, self-hosted, and in-person merchants.</h1>
+    <p class="lead">PayIn is the public home for PayIn Cloud, PayIn Open, PayIn Go, and the shared concepts behind stablecoin merchant payments.</p>
     <div class="actions">
       <a class="button" href="/docs/">Explore docs</a>
-      <a class="button secondary" href="/blog/">Read the blog</a>
+      <a class="button secondary" href="/docs/product-lines/">Compare products</a>
     </div>
   </section>
 
   <section>
-    <h2>Product lines</h2>
+    <h2>Choose the right PayIn product</h2>
     <div class="grid">
       <article class="card">
-        <h3>PayIn Cloud</h3>
-        <p class="muted">Hosted stablecoin payment cloud service for online businesses. PayIn operates the infrastructure; merchants integrate APIs and webhooks.</p>
+        <p class="eyebrow small">Hosted</p>
+        <h3><a href="/docs/cloud/getting-started/">PayIn Cloud</a></h3>
+        <p class="muted">Hosted stablecoin payment cloud service for online businesses. PayIn operates the infrastructure; merchants integrate APIs, payment pages, and webhooks.</p>
       </article>
       <article class="card">
-        <h3>PayIn Open</h3>
-        <p class="muted">Self-hosted open-source payment gateway for online businesses that want independent deployment and operations.</p>
+        <p class="eyebrow small">Self-hosted</p>
+        <h3><a href="/docs/open/overview/">PayIn Open</a></h3>
+        <p class="muted">Open-source payment gateway for merchants who want to deploy and operate their own stablecoin payment infrastructure.</p>
       </article>
       <article class="card">
-        <h3>PayIn Go</h3>
+        <p class="eyebrow small">In-person</p>
+        <h3><a href="/docs/go/overview/">PayIn Go</a></h3>
         <p class="muted">Face-to-face payment product for in-person merchants and point-of-sale style payment flows.</p>
       </article>
+    </div>
+  </section>
+
+  <section>
+    <h2>Shared payment concepts</h2>
+    <div class="grid">
+      <article class="card"><h3><a href="/docs/concepts/order-payments/">Order payments</a></h3><p class="muted">Checkout, invoice, and payment request flows.</p></article>
+      <article class="card"><h3><a href="/docs/concepts/deposits/">Deposits</a></h3><p class="muted">Assigned addresses, account top-ups, and monitored incoming transfers.</p></article>
+      <article class="card"><h3><a href="/docs/concepts/webhooks/">Webhooks</a></h3><p class="muted">Reliable merchant system updates for payment status changes.</p></article>
     </div>
   </section>
 </BaseLayout>

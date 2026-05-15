@@ -4,14 +4,31 @@ description: Understand PayIn Cloud, PayIn Open, and PayIn Go.
 order: 1
 ---
 
-## PayIn Cloud
+PayIn is a product family for stablecoin payments across online, self-hosted, and in-person merchant scenarios.
 
-PayIn Cloud is the hosted stablecoin payment cloud service for online businesses.
+| Product | Best for | Operating model | Primary docs |
+| --- | --- | --- | --- |
+| **PayIn Cloud** | Online merchants who want a hosted payment service | PayIn operates the payment infrastructure | [Cloud docs](/docs/cloud/getting-started/) |
+| **PayIn Open** | Merchants who want to self-host their own payment gateway | Merchant deploys and operates PayIn Open | [Open docs](/docs/open/overview/) |
+| **PayIn Go** | In-person and face-to-face merchants | Lightweight point-of-sale payment flows | [Go docs](/docs/go/overview/) |
 
-## PayIn Open
+## Shared concepts
 
-PayIn Open is the self-hosted open-source payment gateway for online businesses that want to operate independently.
+The core payment concepts are shared across the product family:
 
-## PayIn Go
+- Stablecoin payment orders
+- Deposit addresses
+- Sandbox and production environments
+- Blockchain monitoring
+- Webhooks and merchant system updates
+- Settlement, reconciliation, and operational risk controls
 
-PayIn Go is the face-to-face payment product for in-person merchants.
+These concepts are documented once in this public docs hub so Cloud, Open, and Go content can reference the same language.
+
+## Product boundary
+
+PayIn Cloud and PayIn Open are not “free vs paid tiers” of the same deployment. They are different operating models:
+
+- In **PayIn Cloud**, PayIn hosts and operates the payment service.
+- In **PayIn Open**, the merchant self-hosts and operates the open-source payment gateway.
+- In **PayIn Go**, the product is optimized for in-person payment acceptance rather than online checkout integration.
