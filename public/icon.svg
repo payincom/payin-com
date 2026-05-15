@@ -1,5 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="PayIn">
-  <rect width="512" height="512" rx="112" fill="#16161a"/>
-  <path d="M144 354V144h137c55 0 90 32 90 81s-35 82-90 82h-66v47h-71Zm71-112h57c20 0 32-12 32-29s-12-29-32-29h-57v58Z" fill="#faf8f3"/>
-  <rect x="358" y="346" width="48" height="48" rx="11" fill="#1f6f4e"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260" role="img" aria-label="PayIn monogram">
+  <rect x="6" y="6" width="248" height="248" rx="36" fill="#16161a"/>
+  <g fill="#faf8f3">
+    <path d="M64 84h22v14c7-11 19-17 33-17 26 0 43 22 43 52s-17 52-43 52c-14 0-26-6-33-15v46H64V84zm49 84c15 0 25-13 25-35s-10-35-25-35-25 13-25 35 10 35 25 35z"/>
+    <rect x="178" y="64" width="24" height="24" rx="5"/>
+  </g>
 </svg>
