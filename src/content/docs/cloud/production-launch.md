@@ -32,8 +32,8 @@ Production means real customers, real funds, and real operational risk. Do not s
 - Order expiration rules are defined.
 - Underpayment and overpayment policies are documented.
 - Refund and dispute process is documented.
-- Accounting or reconciliation workflow is ready.
-- Support contact path is clear.
+- [Reconciliation](./reconciliation/) workflow is ready.
+- [Support and incident](./support-and-incidents/) contact path is clear.
 
 ## Operational readiness
 

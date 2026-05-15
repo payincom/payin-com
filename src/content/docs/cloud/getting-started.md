@@ -11,13 +11,14 @@ Use PayIn Cloud when you want PayIn to operate the payment service while your bu
 ## Integration path
 
 1. Create or request a merchant account.
-2. Start in sandbox.
-3. Create an API key for your test integration.
-4. Create a test order.
-5. Open the hosted payment page.
-6. Configure and verify your webhook endpoint.
-7. Complete production readiness review.
-8. Move to production only after approval.
+2. Start in [sandbox](./sandbox/).
+3. Create an [API key](./api-keys/) for your test integration.
+4. Create a test [order payment](./order-payments/).
+5. Open the [hosted payment page](./payment-page/).
+6. Configure and verify your [webhook endpoint](./webhooks/).
+7. Prepare [reconciliation](./reconciliation/) and support workflows.
+8. Complete the [production launch checklist](./production-launch/).
+9. Move to production only after approval.
 
 ## What your system needs
 
